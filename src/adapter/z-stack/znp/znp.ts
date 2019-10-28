@@ -222,6 +222,7 @@ class Znp extends events.EventEmitter {
                 );
                 this.unpiWriter.writeFrame(frame);
                 const result = await waiter.promise;
+                console.log(result);
                 if (result && result.payload.hasOwnProperty('status') &&
                     !expectedStatus.includes(result.payload.status)) {
                     throw new Error(
@@ -272,6 +273,8 @@ class Znp extends events.EventEmitter {
         if (matcher.payload) {
             for (const [key, value] of Object.entries(matcher.payload)) {
                 if (!Equals(zpiObject.payload[key], value)) {
+                    console.log(key)
+                    console.log(value);
                     payloadMatch = false;
                     break;
                 }

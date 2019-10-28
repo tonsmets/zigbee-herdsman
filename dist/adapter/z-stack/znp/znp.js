@@ -188,6 +188,7 @@ class Znp extends events_1.default.EventEmitter {
                 const waiter = this.waitress.waitFor({ type: constants_1.Type.SRSP, subsystem: object.subsystem, command: object.command }, timeout);
                 this.unpiWriter.writeFrame(frame);
                 const result = yield waiter.promise;
+                console.log(result);
                 if (result && result.payload.hasOwnProperty('status') &&
                     !expectedStatus.includes(result.payload.status)) {
                     throw new Error(`SREQ '${message}' failed with status '${result.payload.status}' (expected '${expectedStatus}')`);
@@ -230,6 +231,8 @@ class Znp extends events_1.default.EventEmitter {
         if (matcher.payload) {
             for (const [key, value] of Object.entries(matcher.payload)) {
                 if (!fast_deep_equal_1.default(zpiObject.payload[key], value)) {
+                    console.log(key);
+                    console.log(value);
                     payloadMatch = false;
                     break;
                 }
