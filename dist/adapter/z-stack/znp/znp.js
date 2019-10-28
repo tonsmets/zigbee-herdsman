@@ -231,9 +231,9 @@ class Znp extends events_1.default.EventEmitter {
         if (matcher.payload) {
             for (const [key, value] of Object.entries(matcher.payload)) {
                 if (!fast_deep_equal_1.default(zpiObject.payload[key], value)) {
-                    console.log(key);
+                    console.log(zpiObject.payload[key]);
                     console.log(value);
-                    payloadMatch = false;
+                    //payloadMatch = false;
                     break;
                 }
             }
