@@ -34,7 +34,7 @@ const Definition = {
                 { name: 'product', parameterType: parameterType_1.default.UINT8 },
                 { name: 'majorrel', parameterType: parameterType_1.default.UINT8 },
                 { name: 'minorrel', parameterType: parameterType_1.default.UINT8 },
-                { name: 'maintrel', parameterType: parameterType_1.default.UINT8 },
+                //{name: 'maintrel', parameterType: ParameterType.UINT8},
                 { name: 'revision', parameterType: parameterType_1.default.UINT32 },
             ],
         },
